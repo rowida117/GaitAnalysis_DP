@@ -36,10 +36,32 @@ class GaitAnalysisLogic:
             # made the wave smaller cause muscles are weak
             patient = 0.8 * np.sin(t_patient) + 0.1 * np.random.normal(size=len(t_patient))
 
-        # continue here
 
 
-
+        elif case_type == "severe":
+                    # case 3: really bad walking
+                    # speed goes fast then slow
+                    t_patient = np.linspace(0, 4 * np.pi, 140)
+        
+                    # changing the wave shape a lot
+                    # looks like a limp or dragging a foot
+                    patient = np.sin(t_patient * 1.5 + 1) + 0.2 * np.random.normal(size=len(t_patient))
+        
+                elif case_type == "tremor":
+                    # case 4: parkinsons tremor
+                    # the walking speed is normal but they are shaking
+                    t_patient = t_healthy
+        
+                    # added a fast vibration wave on top of the walking
+                    # using 10*t makes it shake really fast
+                    tremor_noise = 0.15 * np.sin(10 * t_patient)
+        
+                    # combine the walk plus the shake plus noise
+                    patient = np.sin(t_patient) + tremor_noise + 0.05 * np.random.normal(size=len(t_patient))
+        
+                else:
+                    # just in case something breaks
+                    raise ValueError("unknown case type selected")
         return healthy, patient
 
     def compute_dtw(self, s1, s2):
