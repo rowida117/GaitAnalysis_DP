@@ -101,7 +101,26 @@ class GaitAnalysisLogic:
         path = []
         i, j = n, m
 
-        #continue here
+
+        # keep going back until the start
+        while i > 0 and j > 0:
+            path.append((i - 1, j - 1))
+
+            # see which neighbor was the best
+            c_match = dp[i - 1, j - 1]
+            c_insert = dp[i - 1, j]
+            c_delete = dp[i, j - 1]
+
+            # pick the smallest number and go there
+            # i like diagonal best if numbers are same
+            if c_match <= c_insert and c_match <= c_delete:
+                i, j = i - 1, j - 1  # move diagonal
+            elif c_insert <= c_delete:
+                i -= 1  # move up
+            else:
+                j -= 1  # move left
+
+        path.reverse()  # flip the list so it is in order
         return dp, path
 
     def stress_test(self):
