@@ -47,7 +47,7 @@ class GaitAnalysisLogic:
                     # looks like a limp or dragging a foot
                     patient = np.sin(t_patient * 1.5 + 1) + 0.2 * np.random.normal(size=len(t_patient))
         
-                elif case_type == "tremor":
+        elif case_type == "tremor":
                     # case 4: parkinsons tremor
                     # the walking speed is normal but they are shaking
                     t_patient = t_healthy
@@ -59,9 +59,9 @@ class GaitAnalysisLogic:
                     # combine the walk plus the shake plus noise
                     patient = np.sin(t_patient) + tremor_noise + 0.05 * np.random.normal(size=len(t_patient))
         
-                else:
-                    # just in case something breaks
-                    raise ValueError("unknown case type selected")
+        else:
+            # just in case something breaks
+            raise ValueError("unknown case type selected")
         return healthy, patient
 
     def compute_dtw(self, s1, s2):
