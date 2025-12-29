@@ -61,5 +61,80 @@ We simulate and analyze four distinct clinical scenarios:
 ### Install Dependencies
 Run the following command to install the required libraries:
 
-```bash
+
 pip install numpy matplotlib
+
+
+
+## 🚀 Usage
+
+1. **Clone the Repository**
+
+git clone [https://github.com/YourUsername/Gait-Analysis-DTW.git](https://github.com/YourUsername/Gait-Analysis-DTW.git)
+cd Gait-Analysis-DTW
+
+
+
+
+2. **Run the Application**
+python main_gui_tkinter.py
+
+
+
+
+3. **Interact with the GUI**
+* **Select a Case:** Click "Case 2: Bradykinesia" to see the Time Warping effect.
+* **Analyze:** Observe the score (Lower is better).
+* **Visualize:** Click **"▶ Animate Alignment"** to see the backtracking in action.
+* **Inspect:** Click **"View DP Matrix"** to see the numbers behind the heatmap.
+
+
+
+---
+
+## 📐 Algorithm Details
+
+The core of the project is the **Dynamic Time Warping** algorithm ( complexity).
+
+**Recurrence Relation:**
+
+
+Where:
+
+* 
+*  = Insertion (Time Expansion)
+*  = Deletion (Time Compression)
+*  = Match
+
+---
+
+## 📂 Project Structure
+
+```
+├── dtw_logic.py          # Backend: DP Algorithm & Signal Generation
+├── main_gui_tkinter.py   # Frontend: Tkinter GUI & Matplotlib Integration
+├── README.md             # Project Documentation
+└── screenshots/          # Images for the repo (Optional)
+
+```
+
+---
+
+## 👥 Team Members
+
+**Team 11 - SBEG 207**
+
+* [Mohamed Badawy]
+* [Rowida Mohamed]
+* [Omar Gamal]
+* [Mona Elkholy]
+* [Ahmed Salem]
+* [Sohila Emad]
+
+---
+
+*Academic Integrity Note: This project was developed for the SBEG 207 Biomedical Engineering course. All logic and code implementations are original work by Team 11.*
+
+```
+
+```
