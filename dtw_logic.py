@@ -4,12 +4,12 @@ import numpy as np
 class GaitAnalysisLogic:
     """
     this class does the main math for the app
-    it makes the fake walking data and compares the signals
+    it makes the simulated  walking data and compares the signals
     """
 
     def generate_data(self, case_type):
         """
-        makes fake sensor data to show walking
+        makes Simulated sensor data to show walking
         it gives back a healthy signal and a patient signal
         """
         # make the healthy walking signal
